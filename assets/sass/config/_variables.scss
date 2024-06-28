@@ -1,0 +1,89 @@
+:root {
+   --orange-100: #FFF3E8;
+   --orange-200: #FFE3CB;
+   --orange-300: #F6B781;
+   --orange-400: #F4AA6A;
+   --orange-500: #F29C52;
+   --orange-600: #F08E3A;
+   --orange-700: #EE8123;
+   --orange-400: #F4AA6A;
+   --brown-300 : #71461E;
+   --brown-400 : #5D3918;
+   --brown-500 : #492D13;
+   --brown-800 : #0C0803;
+   --white-100 : #FEFEFE;
+   --white-200 : #F1F1F1;
+   --white-300 : #E5E5E5;
+   --white-400 : #D8D8D8;
+   --white-500 : #CBCBCB;
+}
+
+:root {
+   --z-back   : -10 --z-normal: 1;
+   --z-tooltip: 10;
+   --z-fixed  : 100;
+   --z-modal  : 1000;
+}
+
+$breakpoints : (l:1024px,
+   s : 768px,
+   xs: 472px);
+
+$secction-separator: 1.5rem;
+
+@include from(xs) {
+   $secction-separator: 2rem;
+}
+
+@include from(s) {
+   $secction-separator: 3rem;
+}
+
+@include from(l) {
+   $secction-separator: 4rem;
+}
+
+$border-b-radius: 32px;
+$border-l-radius: 16px;
+$border-s-radius: 12px;
+$max-witdh : 1300px;
+
+:root {
+   --h1-font-size         : 1.5rem;
+   --h2-font-size         : 1.25rem;
+   --h3-font-size         : 1.10rem;
+   --item-font-size       : 0.750rem;
+   --description-font-size: 0.650rem;
+   --body-font-size       : 0.8rem;
+   --small-font-size      : .65rem;
+
+   @include from(xs) {
+      --h1-font-size         : 2rem;
+      --h2-font-size         : 1.5rem;
+      --h3-font-size         : 1.25rem;
+      --item-font-size       : 1.10rem;
+      --description-font-size: 1rem;
+      --body-font-size       : 1rem;
+   }
+
+   @include from(s) {
+      --h1-font-size         : 2.5rem;
+      --h2-font-size         : 2rem;
+      --h3-font-size         : 1.75rem;
+      --item-font-size       : 1.25rem;
+      --description-font-size: 1.15rem;
+      --body-font-size       : 1.15rem;
+      --small-font-size      : .750rem;
+   }
+
+   @include from(l) {
+      --h1-font-size    : 4rem;
+      --h2-font-size    : 3rem;
+      --h3-font-size    : 2.5rem;
+      --item-l-font-size: 1.75rem;
+      --item-s-font-size: 1.5rem;
+      --large-font-size : 1.25rem;
+      --medium-font-size: 1rem;
+      --small-font-size : 0.875rem;
+   }
+}
