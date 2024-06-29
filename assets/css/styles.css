@@ -10,6 +10,7 @@
   --orange-600: #F08E3A;
   --orange-700: #EE8123;
   --orange-400: #F4AA6A;
+  --brown-200: #865223;
   --brown-300: #71461E;
   --brown-400: #5D3918;
   --brown-500: #492D13;
@@ -25,6 +26,20 @@
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000; }
+
+:root {
+  --section-separator: 1.5rem; }
+  @media screen and (min-width: 472px) {
+    :root {
+      --section-separator: 2rem; } }
+  @media screen and (min-width: 768px) {
+    :root {
+      --section-separator: 3rem;
+      --width-section: 100%; } }
+  @media screen and (min-width: 1024px) {
+    :root {
+      --section-separator: 4rem;
+      --width-section: 50%; } }
 
 :root {
   --h1-font-size: 2.25rem;
@@ -73,8 +88,7 @@
   margin: 0 auto; }
 
 .secction__separator {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem; }
+  margin-top: var(--section-separator); }
 
 *,
 ::after,
@@ -246,22 +260,88 @@ h5 {
 .button-header__icon {
   width: 1em; }
 
-.button-pildora {
+.button-pildora, .button-quad {
   padding: 0.75em 1.5em;
-  border-radius: 32px;
-  background-color: var(--orange-300);
   color: white;
   transition: background-color 0.3s ease, transform 0.3s ease;
   /* Añade la transición */
   display: flex;
   align-items: center;
+  gap: 0.25em;
   font-weight: 700; }
 
-.button-pildora:hover {
-  background-color: var(--orange-600);
+.button-pildora:hover, .button-quad:hover {
   cursor: pointer;
   transform: scale(1.02);
   /* Añade un ligero aumento de tamaño */ }
 
+.button-pildora {
+  border-radius: 32px;
+  background-color: var(--orange-300); }
+
+.button-pildora:hover {
+  background-color: var(--orange-500); }
+
+.button-quad {
+  padding: 0.5em 1.25em;
+  border-radius: 8px;
+  font-weight: 500;
+  background-color: var(--brown-200); }
+
+.button-quad:hover {
+  background-color: var(--brown-400); }
+
 .icon {
   filter: invert(100%) sepia(3%) saturate(12%) hue-rotate(103deg) brightness(105%) contrast(105%); }
+
+.button-brown {
+  background-color: var(--brown-200); }
+
+.button-brown:hover {
+  background-color: var(--brown-400); }
+
+.main-horarios {
+  background-color: var(--orange-400);
+  width: 100%;
+  padding: var(--section-separator) 0; }
+  .main-horarios__background {
+    background-color: var(--orange-100);
+    border-radius: 16px;
+    margin: 0 auto; }
+    .main-horarios__background h2 {
+      padding: 1em 0 0.2em; }
+  .main-horarios__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%; }
+    @media screen and (min-width: 768px) {
+      .main-horarios__container {
+        flex-direction: row; } }
+
+.main-eventos {
+  background-color: var(--white-100);
+  padding: 1em;
+  margin: 1em;
+  width: var(--width-section);
+  border-radius: 16px; }
+  .main-eventos__title {
+    padding: 1em 0 0.25em; }
+  .main-eventos__direccion {
+    padding: 0.5em 0;
+    font-size: var(--small-font-size); }
+  .main-eventos__lugar {
+    margin-right: 1em; }
+  .main-eventos__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .main-eventos__content > *:not(:last-child) {
+      padding: 1em 0; }
+  .main-eventos__container:not(:last-child) {
+    border-bottom: 1px solid var(--white-400); }
+  .main-eventos__button {
+    font-size: var(--small-font-size); }
+  .main-eventos__nota {
+    color: var(--orange-400);
+    font-size: var(--small-font-size); }

@@ -1,0 +1,61 @@
+.main-horarios{
+   background-color: var(--orange-400);
+   width: 100%;
+   padding: var(--section-separator) 0;
+   &__background{
+      background-color: var(--orange-100);
+      border-radius: $border-l-radius ;
+      margin:0 auto;
+      & h2{
+         padding: 1em 0 0.2em;
+      }
+   }
+   &__container{
+      display: flex;
+      flex-direction: column;
+      @include from(s) {
+         flex-direction: row;
+      }      
+      gap: 1em;
+      width: 100%;
+   }
+}
+
+.main-eventos{
+   background-color: var(--white-100);
+   padding: 1em;
+   margin: 1em;
+   width: var(--width-section);
+   border-radius: $border-l-radius ;
+   &__title{
+      padding: 1em 0 0.25em;
+   }
+   &__direccion{
+      padding: 0.5em 0;
+      font-size: var(--small-font-size);
+   }
+   &__lugar{
+      margin-right: 1em;
+   }
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+      & > *:not(:last-child) {
+        padding: 1em 0;
+      }
+    }
+   &__container{
+      &:not(:last-child) {
+         border-bottom: 1px solid var(--white-400);
+      }
+   }
+   &__button{
+      font-size: var(--small-font-size);
+   }
+   &__nota{
+      color: var(--orange-400);
+      font-size: var(--small-font-size);
+   }
+}
