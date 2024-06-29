@@ -18,6 +18,5 @@
 }
 
 .secction__separator {
-   margin-top   : $secction-separator;
-   margin-bottom: $secction-separator;
+   margin-top   : var(--section-separator);
 }

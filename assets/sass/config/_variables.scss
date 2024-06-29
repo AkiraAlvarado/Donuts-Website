@@ -7,6 +7,7 @@
    --orange-600: #F08E3A;
    --orange-700: #EE8123;
    --orange-400: #F4AA6A;
+   --brown-200: #865223;
    --brown-300 : #71461E;
    --brown-400 : #5D3918;
    --brown-500 : #492D13;
@@ -29,51 +30,52 @@ $breakpoints : (l:1024px,
    s : 768px,
    xs: 472px);
 
-$secction-separator: 1.5rem;
-
-@include from(xs) {
-   $secction-separator: 2rem;
-}
-
-@include from(s) {
-   $secction-separator: 3rem;
-}
-
-@include from(l) {
-   $secction-separator: 4rem;
-}
 
 $border-b-radius: 32px;
 $border-l-radius: 16px;
 $border-s-radius: 12px;
 $max-witdh : 1300px;
+$color: var(--brown-500);
+
+
+:root{
+--section-separator: 1.5rem;
+@include from(xs) {
+   --section-separator: 2rem;
+}
+
+@include from(s) {
+   --section-separator: 3rem;
+   --width-section: 100%;
+}
+
+@include from(l) {
+   --section-separator: 4rem;
+   --width-section: 50%;
+}
+}
 
 :root {
-   --h1-font-size         : 1.5rem;
-   --h2-font-size         : 1.25rem;
-   --h3-font-size         : 1.10rem;
-   --item-font-size       : 0.750rem;
-   --description-font-size: 0.650rem;
-   --body-font-size       : 0.8rem;
-   --small-font-size      : .65rem;
 
-   @include from(xs) {
-      --h1-font-size         : 2rem;
-      --h2-font-size         : 1.5rem;
-      --h3-font-size         : 1.25rem;
-      --item-font-size       : 1.10rem;
-      --description-font-size: 1rem;
-      --body-font-size       : 1rem;
-   }
+      --h1-font-size    : 2.25rem;
+      --h2-font-size    : 2rem;
+      --h3-font-size    : 1.75rem;
+      --item-l-font-size: 1.25rem;
+      --item-s-font-size: 1.15rem;
+      --large-font-size : 1rem;
+      --medium-font-size: 0.750rem;
+      --small-font-size : 0.650rem;
+
 
    @include from(s) {
-      --h1-font-size         : 2.5rem;
-      --h2-font-size         : 2rem;
-      --h3-font-size         : 1.75rem;
-      --item-font-size       : 1.25rem;
-      --description-font-size: 1.15rem;
-      --body-font-size       : 1.15rem;
-      --small-font-size      : .750rem;
+      --h1-font-size    : 3rem;
+      --h2-font-size    : 2.75rem;
+      --h3-font-size    : 2.25rem;
+      --item-l-font-size: 1.5rem;
+      --item-s-font-size: 1.25rem;
+      --large-font-size : 1.10rem;
+      --medium-font-size: 0.875rem;
+      --small-font-size : 0.750rem;
    }
 
    @include from(l) {
