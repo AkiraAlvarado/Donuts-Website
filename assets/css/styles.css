@@ -27,8 +27,8 @@
   --z-modal: 1000; }
 
 :root {
-  --h1-font-size: 2.75rem;
-  --h2-font-size: 2.25rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 2rem;
   --h3-font-size: 1.75rem;
   --item-l-font-size: 1.25rem;
   --item-s-font-size: 1.15rem;
@@ -37,7 +37,7 @@
   --small-font-size: 0.650rem; }
   @media screen and (min-width: 768px) {
     :root {
-      --h1-font-size: 3.5rem;
+      --h1-font-size: 3rem;
       --h2-font-size: 2.75rem;
       --h3-font-size: 2.25rem;
       --item-l-font-size: 1.5rem;
@@ -101,7 +101,7 @@ img {
 h1 {
   font-size: var(--h1-font-size);
   font-family: "Lora", serif;
-  font-weight: 500; }
+  font-weight: 700; }
 
 h2 {
   font-size: var(--h2-font-size);
@@ -114,17 +114,19 @@ h4,
 h5 {
   font-family: "Merriweather", sans-serif;
   margin-top: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  line-height: 1.2; }
 
 .main-navBar {
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  position: fixed;
-  font-size: var(--item-s-font-size);
+  font-size: var(--large-s-font-size);
   font-weight: 500;
   top: 1.5rem;
   width: 100%;
-  height: 4rem;
+  height: 3rem;
+  background-color: var(--white-100);
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -176,11 +178,6 @@ h5 {
     /* Añade la transición */ }
   .main-nav__link:hover {
     color: var(--orange-500); }
-  .main-nav__button {
-    display: none; }
-    @media screen and (min-width: 768px) {
-      .main-nav__button {
-        display: block; } }
 
 .main-toggle {
   width: 2.5rem;
@@ -194,16 +191,77 @@ h5 {
 .show {
   left: 50vw; }
 
+#nav-button {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    #nav-button {
+      display: block; } }
+
+.main-header {
+  --width: 100%;
+  --width-image: 70%;
+  --gap: 2em;
+  --padding: 8rem 2rem 3rem;
+  --text: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-image: url(/assets/imagenes/Fondo_de_Header.png);
+  gap: var(--gap);
+  padding: var(--padding); }
+  @media screen and (min-width: 472px) {
+    .main-header {
+      --width: 50%;
+      --width-image: 50%;
+      --text: left; } }
+  @media screen and (min-width: 768px) {
+    .main-header {
+      --gap: 3em;
+      --padding: 10rem 2rem 5rem; } }
+  @media screen and (min-width: 1024px) {
+    .main-header {
+      --gap: 5em; } }
+  @media screen and (min-width: 472px) {
+    .main-header {
+      flex-direction: row; } }
+  .main-header__buttons {
+    display: flex;
+    gap: 1em;
+    margin: 0 auto; }
+    @media screen and (min-width: 472px) {
+      .main-header__buttons {
+        margin: 0; } }
+  .main-header__image {
+    width: var(--width-image);
+    text-align: right; }
+  .main-header__content {
+    width: var(--width);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: var(--text); }
+
+.button-header__icon {
+  width: 1em; }
+
 .button-pildora {
   padding: 0.75em 1.5em;
   border-radius: 32px;
   background-color: var(--orange-300);
   color: white;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  /* Añade la transición */ }
+  /* Añade la transición */
+  display: flex;
+  align-items: center;
+  font-weight: 700; }
 
 .button-pildora:hover {
   background-color: var(--orange-600);
   cursor: pointer;
   transform: scale(1.02);
   /* Añade un ligero aumento de tamaño */ }
+
+.icon {
+  filter: invert(100%) sepia(3%) saturate(12%) hue-rotate(103deg) brightness(105%) contrast(105%); }

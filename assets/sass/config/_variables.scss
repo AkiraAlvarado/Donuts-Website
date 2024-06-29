@@ -51,8 +51,8 @@ $color: var(--brown-500);
 
 :root {
 
-      --h1-font-size    : 2.75rem;
-      --h2-font-size    : 2.25rem;
+      --h1-font-size    : 2.25rem;
+      --h2-font-size    : 2rem;
       --h3-font-size    : 1.75rem;
       --item-l-font-size: 1.25rem;
       --item-s-font-size: 1.15rem;
@@ -62,7 +62,7 @@ $color: var(--brown-500);
 
 
    @include from(s) {
-      --h1-font-size    : 3.5rem;
+      --h1-font-size    : 3rem;
       --h2-font-size    : 2.75rem;
       --h3-font-size    : 2.25rem;
       --item-l-font-size: 1.5rem;
