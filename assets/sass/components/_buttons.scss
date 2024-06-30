@@ -4,10 +4,10 @@
    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade la transición */
    display: flex;
    align-items: center;
-
    gap: 0.25em;
    font-weight: 700;
 }
+
 %button:hover{
    cursor: pointer;
    transform: scale(1.02); /* Añade un ligero aumento de tamaño */
@@ -38,6 +38,9 @@
 .icon{
    filter: invert(100%) sepia(3%) saturate(12%) hue-rotate(103deg) brightness(105%) contrast(105%);
 }
+.icon-width{
+   width: 1em;
+}
 
 .button-brown{
    background-color: var(--brown-200);
@@ -46,3 +49,19 @@
 .button-brown:hover{
    background-color: var(--brown-400);
 }
+
+.button-menu{
+   @extend %button;
+   background-color: var(--orange-300);
+   padding: 0.5em 1em;
+   border-radius: 8px;
+}
+.button-menu:hover{
+   background-color: var(--orange-500);
+}
+
+.button_icon{
+   display: flex;
+   align-items: center;
+}
+

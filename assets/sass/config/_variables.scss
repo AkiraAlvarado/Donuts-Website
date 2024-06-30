@@ -41,16 +41,16 @@ $color: var(--brown-500);
 :root{
 --section-separator: 1.5rem;
 @include from(xs) {
-   --section-separator: 2rem;
+   --section-separator: 2.5rem;
 }
 
 @include from(s) {
-   --section-separator: 3rem;
+   --section-separator: 4rem;
    --width-section: 100%;
 }
 
 @include from(l) {
-   --section-separator: 4rem;
+   --section-separator: 5rem;
    --width-section: 50%;
 }
 }
