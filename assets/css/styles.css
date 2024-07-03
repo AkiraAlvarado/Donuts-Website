@@ -495,3 +495,34 @@ h5 {
 
 .main-comments__image {
   padding: 1em 0; }
+
+.main-background {
+  overflow: hidden;
+  position: relative; }
+
+.main-background__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.main-background__content {
+  padding: 3em 1em;
+  position: relative;
+  z-index: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-elly-fairytale-3893682.jpg);
+  filter: blur(0.5px); }
+
+#background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
