@@ -1,0 +1,43 @@
+.main-footer{
+   --padding: 1.25rem 0;
+   --margin: 1rem;
+   --width: 2.5rem;
+   @include from(s){
+       --padding: 3rem 0;
+       --margin: 2rem;
+       --width: 3rem;
+   }
+
+   margin-top: var(--margin-top);
+   background-color: var(--brown-800);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: var(--padding);
+
+   &__elements{
+       display: flex;
+       gap: 2.5em;
+   }
+   &__icon{
+       width: var(--width);
+       padding:0.5em;
+       border-radius: 50%;
+       background-color: var(--white-100);
+       margin-bottom: var(--margin)
+   }
+
+   &__links{
+       display: flex;
+       gap: 2em;
+       font-size: var(--body-font-size);
+   }
+
+   &__link{
+       color: var(--white-100);
+   }
+   &__link:hover{
+      color: var(--orange-500);
+   }
+
+}
