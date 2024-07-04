@@ -1,0 +1,65 @@
+.main-destacado{
+   &>p{
+      padding: 1em;
+   }
+   &__container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(6,1fr);
+      gap: 2em;
+      @include from(s) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: repeat(3,1fr);
+      }
+      @include from(l) {
+         grid-template-columns: repeat(3, 1fr);
+         grid-template-rows: repeat(2,1fr);
+      }
+   }
+}
+
+.card{
+   width: 100%;
+   background-color: var(--orange-100);
+   border-radius: $border-l-radius;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   &__image__container{
+      max-height: 250px;
+      overflow: hidden;
+      height: 100%;
+   }
+   &__image{
+      padding: 1em 1em 0 1em;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+   }
+   &__content{
+      padding: 1em 1em 0.75em 1em;
+      display: flex;
+      flex-direction: column;
+   }
+   &__details{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1em 1em 1em;
+      font-size: var(--medium-font-size);
+   }
+   &__desciption h3{
+      padding-bottom: 0.5em ;
+      font-size: var(--item-s-font-size);
+   }
+   &__desciption p{
+      padding-bottom: 0.5em ;
+   }
+   
+   &__precio{
+      padding: 0.75em;
+      border-radius: $border-l-radius;
+      background-color: var(--orange-200);
+      color: var(--orange-600);
+   }
+   
+}

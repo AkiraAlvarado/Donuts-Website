@@ -1,0 +1,27 @@
+.main-comments{
+   &__container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2em;
+      margin-top: 1.5em;
+      @include from(xs) {
+         grid-template-columns: repeat(2, 1fr);
+      }  
+      @include from(l) {
+         grid-template-columns: repeat(4, 1fr);
+         grid-template-rows: repeat(1, 1fr);
+      }  
+   }
+   &__card{
+      background-color: var(--orange-100);
+      padding: 1em;
+      border-radius: $border-l-radius; 
+   }
+   &__description{
+      text-align: left;
+   }
+   &__image{
+      padding: 1em 0;
+   }
+}

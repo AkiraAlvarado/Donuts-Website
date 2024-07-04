@@ -1,0 +1,52 @@
+.main-header{
+   --width: 100%;
+   --width-image: 70%;
+   --gap: 2em;
+   --padding : 8rem 2rem 3rem;
+   --text : center;
+   @include from(xs) {
+   --width: 50%;
+   --width-image: 50%;
+   --text : left;
+   }
+   @include from(s) {
+   --gap: 3em;
+   --padding : 10rem 2rem 5rem;
+   }
+   @include from(l) {
+   --gap: 5em;
+   }
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   flex-direction: column;
+   background-image: url(/assets/imagenes/Fondo_de_Header.png);
+   @include from(xs) {
+      flex-direction: row;
+   }
+   gap: var(--gap);
+   &__buttons{
+      display: flex;
+      gap: 1em;
+      margin: 0 auto;
+      @include from(xs) {
+         margin: 0;
+      }
+   }
+   &__image{
+      width:var(--width-image);
+      text-align: right;
+   }
+   &__content{
+      width: var(--width);
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      text-align: var(--text);
+   }  
+   padding: var(--padding);
+}
+.button-header__icon{
+   width: 1em;
+}
