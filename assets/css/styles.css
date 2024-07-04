@@ -106,7 +106,8 @@ body {
   font-size: var(--large-font-size);
   background-color: var(--black-500);
   color: var(--brown-500);
-  line-height: 120%; }
+  line-height: 120%;
+  overflow-x: hidden; }
 
 a {
   text-decoration: none;
@@ -142,7 +143,7 @@ h5 {
   font-size: var(--large-s-font-size);
   font-weight: 500;
   top: 1.5rem;
-  width: 100%;
+  width: 95%;
   height: 3rem;
   background-color: var(--white-100);
   flex-direction: row;
@@ -164,7 +165,7 @@ h5 {
 
 .main-nav {
   position: fixed;
-  left: 100vw;
+  left: 110vw;
   height: 100vh;
   width: 50vw;
   transition: left .3s ease;
@@ -554,8 +555,11 @@ h5 {
     margin-bottom: var(--margin); }
   .main-footer__links {
     display: flex;
-    gap: 2em;
+    gap: 0.5em;
     font-size: var(--body-font-size); }
+    @media screen and (min-width: 472px) {
+      .main-footer__links {
+        gap: 2em; } }
   .main-footer__link {
     color: var(--white-100); }
   .main-footer__link:hover {
