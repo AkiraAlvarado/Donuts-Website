@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
   const verMenu = (menu, toggle) => {
@@ -14,34 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   verMenu('menu', 'toggle');
 
 });
-// const buttonPrev = document.getElementById("prev-slide");
-// const buttonNext = document.getElementById("next-slide");
-// const slide = document.querySelector(".galeria-container__image__list");
-// const imagen = document.getElementById("image");
-
-// const imageSize = 325; // Tamaño de cada imagen en píxeles
-// const paddingSize = 20; // Tamaño del padding entre imágenes en píxeles
-
-// let currentPosition = 0; // Posición actual del slider
-
-// buttonPrev.addEventListener('click', () => {
-//   currentPosition += imageSize + paddingSize; // Mover al siguiente slide
-//   if (currentPosition > 0) {
-//     currentPosition = -(imageSize + paddingSize) * (10 - 1); // Volver al primer slide al final
-//   }
-//   slide.style.left = `${currentPosition}px`;
-// });
-
-// buttonNext.addEventListener('click', () => {
-//   currentPosition -= imageSize + paddingSize; // Move to previous slide
-//   if (currentPosition <= -(imageSize + paddingSize) * (10 - 1)) {
-//     currentPosition = 0; // Move back to the first slide at the end
-//   }
-//   slide.style.left = `${currentPosition}px`;
-// });
-
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
   const prevButton = document.getElementById('button-prev');
@@ -58,25 +29,30 @@ document.addEventListener('DOMContentLoaded', function () {
   // Event listener para el botón de previo
   prevButton.addEventListener('click', function () {
     if (currentPosition > 0) {
-      currentPosition -= (slideWidth + slideMargin);
+      currentPosition -= (slideWidth + slideMargin); // Elimina una posición , para que el translateX , retroceda un poco
+      // Ya que el translate no se actuailiza con cada click, sino que desde el principio desde el inicio del contenedor
+      // Sigue calculadando, cuanto mover,se si al dar next se movio 800 , y al dar prev, se bajo 200 al currenposition,
+      //Entonces quedaria en 600, siend asi que el translate es menor desde la posición inicial ,retrocediendo
       track.style.transform = `translateX(${-currentPosition}px)`;
       console.log(currentPosition)
-    } if (currentPosition + slideWidth + slideMargin < trackWidth) {
-      nextButton.disabled = false; // habilitar el boton
-      console.log(`ancho actual ${currentPosition + slideWidth + slideMargin}`)
-      console.log(`ancho total ${trackWidth}`)
     }
   });
 
   // Event listener para el botón de siguiente
   nextButton.addEventListener('click', function () {
+    // Obtiene la posición , mediante la suma de la imagen y el margen , pero , solo si es menor que el ancho total
     if (currentPosition + slideWidth + slideMargin < trackWidth) {
       currentPosition += (slideWidth + slideMargin);
       track.style.transform = `translateX(${-currentPosition}px)`;
+      console.log(currentPosition)
     }
-    // Deshabilitar el botón siguiente si se llega al final
+
+    // Si es mayor que el ancho total , entonces regresa a a primera imagen
     if (currentPosition + slideWidth + slideMargin >= trackWidth) {
-      nextButton.disabled = true; // Deshabilitar el botón
+      currentPosition = 0;// Deshabilitar el botón
+      track.style.transform = `translateX(${-currentPosition}px)`
+      console.log(currentPosition)
+      return
     }
   });
 });
